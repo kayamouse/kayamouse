@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,118 +8,328 @@
   <meta name="description" content="a little corner of the internet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <div class="site">
 
     <header class="top">
       <div class="tiny-mark">✦</div>
+
       <div>
         <p class="eyebrow">welcome</p>
         <p class="subline">a little place on the internet</p>
       </div>
     </header>
 
+
     <div class="layout">
 
+      <!-- SIDEBAR -->
       <aside class="sidebar" aria-label="navigation">
+
         <div class="side-title">contents</div>
 
-        <a class="nav-button active" href="#home"><span>⌂</span> home</a>
-        <a class="nav-button" href="#music"><span>♫</span> music</a>
-        <a class="nav-button" href="#touhou"><span>✦</span> touhou</a>
-        <a class="nav-button" href="#nyn"><span>🐭</span> nyn</a>
-        <a class="nav-button" href="#person"><span>♡</span> my person</a>
-        <a class="nav-button" href="#photos"><span>▧</span> photos</a>
-        <a class="nav-button" href="#other"><span>✧</span> other things</a>
+        <button class="nav-button active" data-tab="home" type="button">
+          <span>⌂</span>
+          home
+        </button>
+
+        <button class="nav-button" data-tab="music" type="button">
+          <span>♫</span>
+          music
+        </button>
+
+        <button class="nav-button" data-tab="touhou" type="button">
+          <span>✦</span>
+          touhou
+        </button>
+
+        <button class="nav-button" data-tab="nyn" type="button">
+          <span>🐭</span>
+          nyn
+        </button>
+
+        <button class="nav-button" data-tab="person" type="button">
+          <span>♡</span>
+          my person
+        </button>
+
+        <button class="nav-button" data-tab="photos" type="button">
+          <span>▧</span>
+          photos
+        </button>
+
+        <button class="nav-button" data-tab="other" type="button">
+          <span>✧</span>
+          other things
+        </button>
 
         <div class="mini-note">
           <span>✿</span>
           <p>(blank)</p>
         </div>
+
       </aside>
 
+
+      <!-- MAIN CONTENT -->
       <main class="content">
 
-        <section id="home" class="welcome-box">
-          <div class="bubble bubble-1"></div>
-          <div class="bubble bubble-2"></div>
-          <div class="bubble bubble-3"></div>
+        <!-- HOME -->
+        <section id="home" class="tab-content active">
 
-          <p class="hello">hello!</p>
-          <p class="intro">
-            I've saved some nice things over the years.
-          </p>
-          <p class="small-text">
-            (blank)
-          </p>
+          <div class="welcome-box">
+
+            <div class="bubble bubble-1"></div>
+            <div class="bubble bubble-2"></div>
+            <div class="bubble bubble-3"></div>
+
+            <div class="welcome-content">
+              <p class="hello">hello!</p>
+
+              <p class="intro">
+                I've saved some nice things over the years.
+              </p>
+
+              <p class="small-text">
+                (blank)
+              </p>
+            </div>
+
+          </div>
+
+          <div class="soft-line">
+            ✧ ───────── ♡ ───────── ✧
+          </div>
+
         </section>
 
-        <div class="soft-line">✧ ───────── ♡ ───────── ✧</div>
 
-        <section id="music" class="section">
-          <div class="section-heading">
-            <span>♫</span>
-            <h2>music</h2>
+        <!-- MUSIC -->
+        <section id="music" class="tab-content">
+
+          <div class="section">
+
+            <div class="section-heading">
+              <span>♫</span>
+              <h2>music</h2>
+            </div>
+
+            <p>(blank)</p>
+
+            <div class="music-list">
+
+              <div>
+                <strong>Kiyono F9</strong>
+                <span>favorite music</span>
+              </div>
+
+              <div>
+                <strong>Triplaneta</strong>
+                <span>electrocutica</span>
+              </div>
+
+              <div>
+                <strong>yuyoyuppe</strong>
+                <span>old favorites</span>
+              </div>
+
+              <div>
+                <strong>Solitude Freak</strong>
+                <span>album</span>
+              </div>
+
+              <div>
+                <strong>Hidamari no Uta</strong>
+                <span>favorite song</span>
+              </div>
+
+            </div>
+
           </div>
-          <p>(blank)</p>
-          <div class="music-list">
-            <div><strong>Kiyono F9</strong><span>favorite music</span></div>
-            <div><strong>Triplaneta</strong><span>electrocutica</span></div>
-            <div><strong>yuyoyuppe</strong><span>old favorites</span></div>
-            <div><strong>Solitude Freak</strong><span>album</span></div>
-            <div><strong>Hidamari no Uta</strong><span>favorite song</span></div>
-          </div>
+
         </section>
 
-        <section id="touhou" class="section">
-          <div class="section-heading">
-            <span>✦</span>
-            <h2>touhou</h2>
+
+        <!-- TOUHOU -->
+        <section id="touhou" class="tab-content">
+
+          <div class="section">
+
+            <div class="section-heading">
+              <span>✦</span>
+              <h2>touhou</h2>
+            </div>
+
+            <p>(blank)</p>
+
           </div>
-          <p>(blank)</p>
+
         </section>
 
-        <section id="nyn" class="section">
-          <div class="section-heading">
-            <span>🐭</span>
-            <h2>nyn</h2>
+
+        <!-- NYN -->
+        <section id="nyn" class="tab-content">
+
+          <div class="section">
+
+            <div class="section-heading">
+              <span>🐭</span>
+              <h2>nyn</h2>
+            </div>
+
+            <p>(blank)</p>
+
           </div>
-          <p>(blank)</p>
+
         </section>
 
-        <section id="person" class="section">
-          <div class="section-heading">
-            <span>♡</span>
-            <h2>my person</h2>
+
+        <!-- MY PERSON -->
+        <section id="person" class="tab-content">
+
+          <div class="section">
+
+            <div class="section-heading">
+              <span>♡</span>
+              <h2>my person</h2>
+            </div>
+
+            <p>(blank)</p>
+
           </div>
-          <p>(blank)</p>
+
         </section>
 
-        <section id="photos" class="section">
-          <div class="section-heading">
-            <span>▧</span>
-            <h2>photos</h2>
+
+        <!-- PHOTOS -->
+        <section id="photos" class="tab-content">
+
+          <div class="section">
+
+            <div class="section-heading">
+              <span>▧</span>
+              <h2>photos</h2>
+            </div>
+
+            <p>(blank)</p>
+
           </div>
-          <p>(blank)</p>
+
         </section>
 
-        <section id="other" class="section last-section">
-          <div class="section-heading">
-            <span>✧</span>
-            <h2>other things</h2>
+
+        <!-- OTHER THINGS -->
+        <section id="other" class="tab-content">
+
+          <div class="section">
+
+            <div class="section-heading">
+              <span>✧</span>
+              <h2>other things</h2>
+            </div>
+
+            <p>(blank)</p>
+
           </div>
-          <p>(blank)</p>
+
         </section>
 
       </main>
+
     </div>
 
+
     <footer>
-      <span>♡</span> kayamouse <span>♡</span>
+      <span>♡</span>
+      kayamouse
+      <span>♡</span>
     </footer>
 
   </div>
 
+
+  <!-- TAB JAVASCRIPT -->
+  <script>
+    const navButtons = document.querySelectorAll(".nav-button");
+    const tabs = document.querySelectorAll(".tab-content");
+
+    function showTab(tabName, updateUrl = true) {
+
+      // Make sure the requested tab exists
+      const targetTab = document.getElementById(tabName);
+
+      if (!targetTab) {
+        tabName = "home";
+      }
+
+      // Remove active state from everything
+      navButtons.forEach(button => {
+        button.classList.remove("active");
+      });
+
+      tabs.forEach(tab => {
+        tab.classList.remove("active");
+      });
+
+      // Activate the selected tab
+      const activeButton = document.querySelector(
+        `.nav-button[data-tab="${tabName}"]`
+      );
+
+      const activeTab = document.getElementById(tabName);
+
+      if (activeButton && activeTab) {
+        activeButton.classList.add("active");
+        activeTab.classList.add("active");
+      }
+
+      // Update the URL without scrolling
+      if (updateUrl) {
+        history.pushState(null, "", `#${tabName}`);
+      }
+
+      // Put the page at the top when changing tabs
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+
+    // Sidebar clicks
+    navButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const tabName = button.dataset.tab;
+
+        showTab(tabName);
+
+      });
+
+    });
+
+
+    // Browser back / forward buttons
+    window.addEventListener("popstate", () => {
+
+      const tabName = window.location.hash.substring(1) || "home";
+
+      showTab(tabName, false);
+
+    });
+
+
+    // Open the correct tab when the page first loads
+    const initialTab =
+      window.location.hash.substring(1) || "home";
+
+    showTab(initialTab, false);
+
+  </script>
+
 </body>
 </html>
+```
