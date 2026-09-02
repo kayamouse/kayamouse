@@ -1,153 +1,236 @@
-```css
+/* ---------------------------------------------
+   kayamouse — a little place on the internet
+   --------------------------------------------- */
+
+:root {
+  --bg: #f5eff2;
+  --paper: #fffbfa;
+  --ink: #4b3b4a;
+  --ink-soft: #8a7a88;
+  --accent: #b8698c;
+  --accent-2: #7d8cae;
+  --line: #e3d4df;
+  --tag-bg: #efe0ea;
+  --tag-bg-alt: #e7e6f1;
+
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Libre Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-
-    background:
-        radial-gradient(
-            circle at top,
-            #ffffff 0%,
-            #f1eff8 40%,
-            #e9e7f2 100%
-        );
-
-    color: #666176;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(38rem 24rem at 8% -6%, rgba(184, 105, 140, 0.14), transparent 60%),
+    radial-gradient(32rem 22rem at 96% 8%, rgba(125, 140, 174, 0.13), transparent 60%),
+    radial-gradient(30rem 26rem at 50% 108%, rgba(184, 105, 140, 0.10), transparent 60%);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
 }
 
-main {
-    width: min(600px, calc(100% - 32px));
-    margin: 100px auto;
-    text-align: center;
+::selection {
+  background: var(--accent);
+  color: var(--paper);
 }
 
-.symbol {
-    color: #aaa0c9;
-    font-size: 18px;
-    margin-bottom: 12px;
-
-    text-shadow:
-        0 0 12px rgba(170, 160, 210, 0.5);
+a {
+  color: var(--accent);
 }
 
-h1 {
-    margin: 0;
-
-    color: #625b74;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 56px;
-    font-weight: normal;
-
-    text-shadow:
-        0 0 20px rgba(170, 160, 210, 0.22);
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
 }
+
+.page {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 4rem;
+}
+
+/* ---------- header ---------- */
 
 .intro {
-    margin: 12px 0 30px;
-
-    color: #918aa2;
-
-    font-size: 14px;
+  text-align: center;
+  margin-bottom: 2.75rem;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    gap: 8px 18px;
-
-    margin-bottom: 30px;
+.little-symbol {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1.1rem;
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--accent);
+  font-size: 1.25rem;
+  box-shadow: 0 1px 0 rgba(75, 59, 74, 0.06), 0 6px 16px -8px rgba(75, 59, 74, 0.35);
 }
 
-nav a {
-    color: #817a91;
-    text-decoration: none;
-
-    font-size: 14px;
-
-    transition: 0.2s;
+.intro h1 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 2.5rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.6rem;
+  color: var(--ink);
 }
 
-nav a:hover {
-    color: #625b74;
-
-    text-shadow:
-        0 0 10px rgba(170, 160, 210, 0.55);
+.intro p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-style: italic;
+  font-family: var(--serif);
+  font-size: 1.05rem;
 }
 
-.stars {
-    margin: 30px 0;
+/* ---------- nav ---------- */
 
-    color: #aaa0c9;
-
-    font-size: 11px;
-
-    opacity: 0.8;
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem 0.5rem;
+  margin-bottom: 2.5rem;
 }
 
-section {
-    margin: 55px 0;
+.navigation a {
+  --rot: -1.5deg;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--tag-bg);
+  padding: 0.4rem 0.85rem;
+  border-radius: 0.9rem 0.4rem 0.9rem 0.4rem;
+  font-size: 0.92rem;
+  transform: rotate(var(--rot));
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
 }
 
-h2 {
-    margin-bottom: 8px;
-
-    color: #706883;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 20px;
-    font-weight: normal;
+.navigation a:nth-child(even) {
+  --rot: 1.5deg;
+  background: var(--tag-bg-alt);
 }
 
-section p {
-    margin: 0;
-
-    color: #9791a3;
-
-    font-size: 13px;
+.navigation a:hover,
+.navigation a:focus-visible {
+  transform: rotate(0deg) translateY(-1px);
+  background: var(--accent);
+  color: var(--paper);
 }
+
+/* ---------- dividers ---------- */
+
+.divider {
+  text-align: center;
+  color: var(--ink-soft);
+  letter-spacing: 0.3em;
+  font-size: 0.85rem;
+  margin: 0 0 2.5rem;
+}
+
+.divider--line {
+  font-family: var(--sans);
+  color: var(--line);
+  letter-spacing: 0;
+  margin: 3rem 0 2rem;
+}
+
+/* ---------- note ---------- */
+
+.note {
+  background: var(--paper);
+  border: 1px dashed var(--line);
+  border-radius: 0.3rem 1.1rem 0.3rem 1.1rem;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 2.75rem;
+  transform: rotate(-0.4deg);
+}
+
+.note p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-style: italic;
+  font-family: var(--serif);
+}
+
+/* ---------- sections ---------- */
+
+.simple-section {
+  margin-bottom: 2.75rem;
+}
+
+.simple-section h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: var(--accent);
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px dashed var(--line);
+}
+
+.simple-section p {
+  margin: 0 0 0.5rem;
+  color: var(--ink);
+}
+
+.simple-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- footer ---------- */
 
 footer {
-    margin-top: 60px;
-
-    color: #aaa4b4;
-
-    font-size: 11px;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
 }
 
-@media (max-width: 600px) {
-    main {
-        margin-top: 60px;
-    }
-
-    h1 {
-        font-size: 44px;
-    }
-
-    nav {
-        gap: 8px 14px;
-    }
+footer p {
+  margin: 0 0 0.3rem;
 }
-```
+
+footer p:first-child {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 30rem) {
+  .page {
+    padding: 3rem 1.15rem 3rem;
+  }
+
+  .intro h1 {
+    font-size: 2.1rem;
+  }
+}
+
+/* ---------- reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .navigation a {
+    transition: none;
+  }
+}
