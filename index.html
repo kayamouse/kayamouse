@@ -9,138 +9,124 @@
 </head>
 
 <body>
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
-
   <div class="site">
-    <header class="top">
-      <div class="tiny-mark">
-        <img src="assets/bow.gif" alt="" aria-hidden="true">
-      </div>
 
+    <header class="top">
+      <img class="header-gif" src="assets/new%20nyn.gif" alt="">
       <div class="brand">
         <div class="site-name">kayamouse.com</div>
       </div>
     </header>
 
     <div class="layout">
+
       <aside class="sidebar" aria-label="navigation">
         <div class="side-title">contents</div>
 
         <nav class="nav" aria-label="site tabs">
           <button class="nav-button active" type="button" data-tab="home" aria-selected="true">
-            <span class="nav-icon">⌂</span><span class="nav-label">home</span>
+            <span class="nav-icon" aria-hidden="true">⌂</span>
+            <span class="nav-label">home</span>
           </button>
+
           <button class="nav-button" type="button" data-tab="music" aria-selected="false">
-            <span class="nav-icon">♫</span><span class="nav-label">music</span>
+            <span class="nav-icon" aria-hidden="true">♫</span>
+            <span class="nav-label">music</span>
           </button>
+
           <button class="nav-button" type="button" data-tab="touhou" aria-selected="false">
-            <span class="nav-icon">✦</span><span class="nav-label">touhou</span>
+            <span class="nav-icon" aria-hidden="true">✦</span>
+            <span class="nav-label">touhou</span>
           </button>
+
           <button class="nav-button" type="button" data-tab="nyn" aria-selected="false">
-            <span class="nav-icon">🐭</span><span class="nav-label">nyn</span>
+            <span class="nav-icon" aria-hidden="true">🐭</span>
+            <span class="nav-label">nyn</span>
           </button>
+
           <button class="nav-button" type="button" data-tab="person" aria-selected="false">
-            <span class="nav-icon">♡</span><span class="nav-label">my person</span>
+            <span class="nav-icon" aria-hidden="true">♡</span>
+            <span class="nav-label">my person</span>
           </button>
+
           <button class="nav-button" type="button" data-tab="photos" aria-selected="false">
-            <span class="nav-icon">▧</span><span class="nav-label">photos</span>
+            <span class="nav-icon" aria-hidden="true">▧</span>
+            <span class="nav-label">photos</span>
           </button>
+
           <button class="nav-button" type="button" data-tab="other" aria-selected="false">
-            <span class="nav-icon">✧</span><span class="nav-label">other things</span>
+            <span class="nav-icon" aria-hidden="true">✧</span>
+            <span class="nav-label">other things</span>
           </button>
         </nav>
-
-        <div class="mini-note">
-          <span>✿</span>
-          <p>(blank)</p>
-        </div>
       </aside>
 
       <main class="content">
+
         <section id="home" class="tab-content active">
-          <div class="glass-panel home-panel">
-            <div class="liquid-orb orb-a"></div>
-            <div class="liquid-orb orb-b"></div>
-            <div class="liquid-orb orb-c"></div>
-            <div class="glass-streak streak-a"></div>
-            <div class="glass-streak streak-b"></div>
-
-            <div class="welcome-content">
-              <p class="hello">hello!</p>
-              <p class="intro">I've saved some nice things over the years.</p>
-              <p class="small-text">(blank)</p>
-            </div>
-          </div>
-
-          <div class="soft-line">✧ ───────── ♡ ───────── ✧</div>
-
-          <div class="placeholder-note">
-            <span>✦</span>
-            <p>This is the home tab placeholder. Replace it with your own text, images, links, and decorations later.</p>
+          <div class="video-wrap">
+            <video
+              class="home-video"
+              controls
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="assets/background.jpg"
+            >
+              <source src="assets/original%20triplaneta%20video.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
           </div>
         </section>
 
         <section id="music" class="tab-content" hidden>
-          <div class="section">
-            <div class="section-heading"><span>♫</span><h2>music</h2></div>
-            <p class="section-intro">A placeholder for playlists, albums, artists, embeds, and anything else you want to keep here.</p>
-            <div class="music-list">
-              <div><strong>Kiyono F9</strong><span>favorite music</span></div>
-              <div><strong>Triplaneta</strong><span>electrocutica</span></div>
-              <div><strong>yuyoyuppe</strong><span>old favorites</span></div>
-              <div><strong>Solitude Freak</strong><span>album</span></div>
-              <div><strong>Hidamari no Uta</strong><span>favorite song</span></div>
-            </div>
+          <div class="placeholder-page">
+            <h1>music</h1>
+            <p>placeholder</p>
           </div>
         </section>
 
         <section id="touhou" class="tab-content" hidden>
-          <div class="section placeholder-page">
-            <div class="section-heading"><span>✦</span><h2>touhou</h2></div>
-            <div class="empty-card"><div class="empty-symbol">✦</div><h3>placeholder</h3><p>Add your Touhou art, characters, screenshots, music, favorites, or whatever you want here later.</p></div>
+          <div class="placeholder-page">
+            <h1>touhou</h1>
+            <p>placeholder</p>
           </div>
         </section>
 
         <section id="nyn" class="tab-content" hidden>
-          <div class="section placeholder-page">
-            <div class="section-heading"><span>🐭</span><h2>nyn</h2></div>
-            <div class="empty-card"><div class="empty-symbol">🐭</div><h3>placeholder</h3><p>This page is intentionally empty for now. Drop your Nyn images and other content into it later.</p></div>
+          <div class="placeholder-page">
+            <h1>nyn</h1>
+            <p>placeholder</p>
           </div>
         </section>
 
         <section id="person" class="tab-content" hidden>
-          <div class="section placeholder-page">
-            <div class="section-heading"><span>♡</span><h2>my person</h2></div>
-            <div class="empty-card"><div class="empty-symbol">♡</div><h3>placeholder</h3><p>Keep this space for whatever personal content you want to add later.</p></div>
+          <div class="placeholder-page">
+            <h1>my person</h1>
+            <p>placeholder</p>
           </div>
         </section>
 
         <section id="photos" class="tab-content" hidden>
-          <div class="section placeholder-page">
-            <div class="section-heading"><span>▧</span><h2>photos</h2></div>
-            <div class="photo-placeholder-grid">
-              <div class="photo-placeholder">image<br>placeholder</div>
-              <div class="photo-placeholder">image<br>placeholder</div>
-              <div class="photo-placeholder">image<br>placeholder</div>
-              <div class="photo-placeholder">image<br>placeholder</div>
-              <div class="photo-placeholder">image<br>placeholder</div>
-              <div class="photo-placeholder">image<br>placeholder</div>
-            </div>
-            <p class="placeholder-caption">Replace these with images from your assets folder later.</p>
+          <div class="placeholder-page">
+            <h1>photos</h1>
+            <p>placeholder</p>
           </div>
         </section>
 
         <section id="other" class="tab-content" hidden>
-          <div class="section placeholder-page">
-            <div class="section-heading"><span>✧</span><h2>other things</h2></div>
-            <div class="empty-card"><div class="empty-symbol">✧</div><h3>placeholder</h3><p>A blank spot for projects, links, experiments, bookmarks, writing, or anything else.</p></div>
+          <div class="placeholder-page">
+            <h1>other things</h1>
+            <p>placeholder</p>
           </div>
         </section>
+
       </main>
     </div>
 
-    <footer><span>♡</span> kayamouse.com <span>♡</span></footer>
+    <footer>♡ kayamouse.com ♡</footer>
   </div>
 
   <script>
@@ -150,25 +136,30 @@
     function setTab(name, updateUrl = true) {
       const safe = document.getElementById(name) ? name : "home";
 
-      tabs.forEach(tab => {
+      tabs.forEach((tab) => {
         const active = tab.id === safe;
         tab.hidden = !active;
         tab.classList.toggle("active", active);
       });
 
-      buttons.forEach(button => {
+      buttons.forEach((button) => {
         const active = button.dataset.tab === safe;
         button.classList.toggle("active", active);
         button.setAttribute("aria-selected", String(active));
       });
 
-      if (updateUrl) history.pushState({ tab: safe }, "", "#" + safe);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (updateUrl) {
+        history.pushState({ tab: safe }, "", "#" + safe);
+      }
+
+      window.scrollTo(0, 0);
     }
 
-    const currentTab = () => location.hash.slice(1) || "home";
+    function currentTab() {
+      return location.hash.slice(1) || "home";
+    }
 
-    buttons.forEach(button => {
+    buttons.forEach((button) => {
       button.addEventListener("click", () => setTab(button.dataset.tab));
     });
 
