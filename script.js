@@ -8,6 +8,7 @@ drawers.forEach((drawer) => {
   button.addEventListener("click", () => {
     const shouldOpen = !panel.classList.contains("is-open");
 
+    // Close every drawer first
     drawers.forEach((otherDrawer) => {
       const otherButton = otherDrawer.querySelector(".drawer-toggle");
       const otherPanel = otherDrawer.querySelector(".drawer-panel");
@@ -19,6 +20,7 @@ drawers.forEach((drawer) => {
       otherSymbol.textContent = "+";
     });
 
+    // Open the clicked drawer
     if (shouldOpen) {
       panel.classList.add("is-open");
       button.setAttribute("aria-expanded", "true");
