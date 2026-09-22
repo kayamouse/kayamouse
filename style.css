@@ -2,28 +2,109 @@
   box-sizing: border-box;
 }
 
-html {
+html,
+body {
+  margin: 0;
+  min-height: 100%;
   background: #000;
+  color: #fff;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  background: #000;
-  color: #fff;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 button {
   font: inherit;
 }
 
+/* Enter screen */
+.enter-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  cursor: pointer;
+  transition: opacity 650ms ease, visibility 650ms ease;
+}
+
+.enter-text {
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 0.22em;
+  text-transform: lowercase;
+  animation: enterPulse 2.4s ease-in-out infinite;
+}
+
+.enter-screen.is-entered {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@keyframes enterPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.035);
+  }
+}
+
+body.is-locked > .site,
+body.is-locked > .site-label {
+  filter: blur(5px);
+  transform: scale(1.005);
+}
+
+.site,
+.site-label {
+  transition: filter 650ms ease, transform 650ms ease;
+}
+
+/* Decorative top and bottom chain */
+.chain {
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  z-index: 900;
+  pointer-events: none;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #fff;
+  line-height: 1;
+  font-size: 12px;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.chain span {
+  display: inline-block;
+  min-width: max-content;
+}
+
+.chain-top {
+  top: 5px;
+}
+
+.chain-bottom {
+  bottom: 5px;
+}
+
 .site {
   width: min(760px, calc(100% - 40px));
   margin: 0;
-  padding: 18px 0 60px 20px;
+  padding: 28px 0 70px 20px;
 }
 
 .nyn-dance {
@@ -42,11 +123,9 @@ button {
 }
 
 .drawer {
-  border-top: 1px solid #fff;
-}
-
-.drawer:last-child {
-  border-bottom: 1px solid #fff;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 6px 0;
 }
 
 .drawer-toggle {
@@ -55,38 +134,53 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 12px 0;
+  padding: 10px 0;
   border: 0;
   background: transparent;
   color: #fff;
   cursor: pointer;
   text-align: left;
-  transition: opacity 120ms ease;
+  transition: opacity 160ms ease, transform 160ms ease;
 }
 
 .drawer-toggle:hover,
 .drawer-toggle:focus-visible {
-  opacity: 0.65;
+  opacity: 0.72;
+  transform: translateX(2px);
 }
 
 .drawer-toggle:focus-visible {
-  outline: 1px solid #fff;
-  outline-offset: 3px;
+  outline: 1px solid rgba(255, 255, 255, 0.75);
+  outline-offset: 4px;
 }
 
 .drawer-symbol {
-  width: 1em;
-  text-align: center;
-  flex: 0 0 auto;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  display: grid;
+  place-items: center;
+}
+
+.drawer-symbol::before {
+  content: "◈";
+  font-size: 12px;
+  line-height: 1;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.drawer-toggle[aria-expanded="true"] .drawer-symbol::before {
+  content: "◇";
+  transform: rotate(45deg);
 }
 
 .drawer-panel {
   display: grid;
   grid-template-rows: 0fr;
+  width: 100%;
   opacity: 0;
-  transition:
-    grid-template-rows 240ms ease,
-    opacity 180ms ease;
+  transition: grid-template-rows 240ms ease, opacity 180ms ease;
 }
 
 .drawer-panel.is-open {
@@ -95,20 +189,23 @@ button {
 }
 
 .drawer-content {
+  width: 100%;
+  min-width: 0;
   min-height: 0;
   overflow: hidden;
   padding: 0;
 }
 
 .drawer-panel.is-open .drawer-content {
-  padding: 0 0 18px 0;
+  padding: 4px 0 18px 0;
 }
 
+/* Music */
 .music-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 28px;
+  gap: 16px;
 }
 
 .song {
@@ -121,20 +218,35 @@ button {
   width: 100%;
   height: auto;
   max-height: 420px;
+  margin: 0 auto;
   background: #000;
+  object-fit: contain;
 }
 
 .song-title {
-  margin-top: 10px;
+  margin-top: 8px;
   color: #fff;
   text-align: center;
+  font-size: 14px;
+}
+
+.site-label {
+  position: fixed;
+  left: 10px;
+  bottom: 24px;
+  z-index: 901;
+  color: #fff;
+  font-size: 9px;
+  line-height: 1;
+  opacity: 0.72;
+  pointer-events: none;
 }
 
 @media (max-width: 600px) {
   .site {
-    width: calc(100% - 28px);
+    width: calc(100vw - 28px);
     padding-left: 14px;
-    padding-top: 14px;
+    padding-top: 26px;
   }
 
   .nyn-dance {
@@ -146,11 +258,31 @@ button {
   .drawers {
     width: 100%;
   }
+
+  .song {
+    width: 100%;
+  }
+
+  .chain {
+    font-size: 10px;
+  }
+
+  .site-label {
+    left: 8px;
+    bottom: 23px;
+    font-size: 8px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .drawer-panel,
-  .drawer-toggle {
+  .enter-screen,
+  .enter-text,
+  .site,
+  .site-label,
+  .drawer-toggle,
+  .drawer-symbol::before,
+  .drawer-panel {
+    animation: none;
     transition: none;
   }
 }
