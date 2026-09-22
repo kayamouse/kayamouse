@@ -10,7 +10,6 @@
   <div class="enter-screen" id="enter-screen" role="button" tabindex="0" aria-label="Enter kayamouse.com">
     <div class="enter-text">enter</div>
   </div>
-
   <div class="chain chain-top" aria-hidden="true">
     <span>༒︎⫘⫘⫘⫘⫘⫘݁༒︎⫘⫘⫘⫘⫘⫘݁༒︎⫘⫘⫘⫘⫘⫘݁༒︎⫘⫘⫘⫘⫘⫘݁༒︎⫘⫘⫘⫘⫘⫘݁༒︎⫘⫘⫘⫘⫘⫘݁༒︎⫘⫘⫘⫘⫘⫘݁༒︎</span>
   </div>
@@ -23,9 +22,6 @@
     <img class="nyn-dance" src="assets/nyndance.gif" alt="" aria-hidden="true" />
 
     <nav class="drawers" aria-label="Main navigation">
-
-
-
       <section class="drawer">
         <button class="drawer-toggle" type="button" aria-expanded="false" aria-controls="drawer-music">
           <span>♡</span>
@@ -40,7 +36,6 @@
               </video>
               <div class="song-title">Triplaneta - Electrocutica (Ft. Kiyono/F9)</div>
             </div>
-
             <div class="song">
               <video class="song-video" controls preload="metadata">
                 <source src="assets/uta.mp4" type="video/mp4" />
@@ -70,14 +65,22 @@
           <span class="drawer-symbol" aria-hidden="true"></span>
         </button>
         <div class="drawer-panel" id="drawer-nyn" aria-hidden="true">
-          <div class="drawer-content">
-            <!-- Put your nyn content here. -->
+          <div class="drawer-content nyn-content">
+            <div class="nyn-playlist-wrap">
+              <iframe
+                class="nyn-playlist"
+                src="https://www.youtube-nocookie.com/embed/videoseries?list=PLisUwm6-VtKo8aCaPcTrDvs6kuffEr-NG"
+                title="Nyn YouTube playlist"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
     </nav>
   </main>
-
   <div class="site-label">kayamouse.com</div>
 
   <script src="script.js"></script>

@@ -12,7 +12,6 @@ function enterSite() {
 }
 
 enterScreen.addEventListener("click", enterSite);
-
 enterScreen.addEventListener("keydown", (event) => {
   if (event.key === "Enter" || event.key === " ") {
     event.preventDefault();

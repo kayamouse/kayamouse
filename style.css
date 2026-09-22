@@ -230,6 +230,27 @@ body.is-locked > .site-label {
   font-size: 14px;
 }
 
+/* Nyn playlist */
+.nyn-content {
+  display: flex;
+  justify-content: center;
+}
+
+.nyn-playlist-wrap {
+  width: min(420px, 100%);
+  aspect-ratio: 16 / 9;
+  margin: 2px auto 0;
+  background: #000;
+  overflow: hidden;
+}
+
+.nyn-playlist {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .site-label {
   position: fixed;
   left: 10px;
@@ -261,6 +282,11 @@ body.is-locked > .site-label {
 
   .song {
     width: 100%;
+  }
+
+  .nyn-playlist-wrap {
+    width: 100%;
+    max-width: 420px;
   }
 
   .chain {
